@@ -1,0 +1,340 @@
+:root{
+    --blanco: #ffffff;
+    --negro: #212121;
+    --principal: #22f68c;
+    --secundario: #8564FF;
+    --fuente_principal: 3.8rem;
+    --sfuente_principal: 'Roboto Mono', monospace;
+}
+html{
+    font-size: 62.5%;
+    font-family: var(--sfuente_principal);
+     /*configurar el tamaño de caja del diseño segun alto o ancho, no padding*/
+    box-sizing: border-box;
+    scroll-snap-type: none;
+}
+*, *:before, *:after { /*configurar el tamaño de caja del diseño segun alto o ancho, no padding*/
+    box-sizing: inherit;
+  }
+body{
+    font-size: 16px;
+    color: var(--blanco);
+    background-image: linear-gradient(to bottom, var(--negro) 65%, #331b50);
+}
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+h1,h2,h3{
+    text-align: center;
+}
+a{
+    color: var(--blanco);
+}
+/*ajuste para usar rem mas facilmente*/
+.titulo{
+    text-align:center;
+    font-size: var(--fuente_principal); /*1rem = 10px*/
+    
+}
+.titulo span{
+    font-size: 2rem;
+}
+.titulo2{
+    font-size: var(--fuente_principal);
+    
+    font-weight: 400;
+}
+.navegacion_principal{
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;/*alinear verticalmente*/
+}/*desing fondo nav*/
+@media (min-width: 768px) {
+    .navegacion_principal{
+        flex-direction: row;
+        justify-content: space-between; /*alinear horizontalmente*/
+    }
+}/*tamaños estandar de media queries 480px,768px,1140px,1400px*/
+.navegacion_principal a{
+    color: var(--negro);
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 2rem;
+}/*desing botones de nav*/
+.navegacion_principal a:hover{
+ background-color: var(--secundario); 
+ color:var(--negro)  
+}/*accion de botones de nav*/
+.nav_bg{
+    background-color: var(--principal);
+}
+p{  
+    font-weight: 300;
+}
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto 0 auto;
+}
+.desctit{
+    text-align:center;
+}
+.hero{
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: var(--blanco);
+    height: 450px;
+    position: relative;/*se asigna pos relativa para content hero*/
+    margin-bottom: 2rem;
+}
+.hero2{
+    background-image: url(../img/imagemcapa.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: var(--blanco);
+    height: 450px;
+    position: relative;/*se asigna pos relativa para content hero*/
+    margin-bottom: 2rem;
+}
+.hero3{
+    background-image: url(../img/hero3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: var(--blanco);
+    height: 450px;
+    position: relative;/*se asigna pos relativa para content hero*/
+    margin-bottom: 2rem;
+}
+.content-hero{
+    position: absolute;/*se asigna pos absoluta en hero*/
+    background: rgba(0,0,0,0.75);/*transparencia a la seccion hero metodo anterior */
+    background: rgb(0 0 0 /75% );/*transparencia a la seccion hero metodo actual */
+    width: 100%; /*el contenedor ocupa toda la seccion*/
+    height: 100%;
+    /*alineacion vertica y horizontal*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.boton{
+    background-color: var(--principal);
+    color: var(--negro);
+    padding: 1rem 3rem 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;/*mayusculas*/
+    font-weight: 700;
+    border-radius: 0.5rem;
+    border:none;
+}
+.boton:hover{
+    background-color: var(--secundario);
+    cursor: pointer;
+}
+.sombra{/*sombra sobre el div de contenedor*/
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(250,247,250,0.74);
+    /*-moz-box-shadow: 0px 5px 15px 0px rgba(250,247,250,0.74);*/
+    box-shadow: 0px 5px 15px 0px rgba(250,247,250,0.74);
+    padding: 2rem;
+    border-radius: 2rem;
+}
+.servicios,.nav_bg,.formulario{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+@media (min-width: 769px) {
+    .servicios{
+        display: grid;
+        grid-template-columns: repeat(3, 33.3%);
+        column-gap: 1rem;
+    }
+}
+.secciones{
+   display:flex;
+   flex-direction: column;
+   align-items: center; 
+   
+}
+.secciones h3{
+    font-weight: 400;
+}
+.secciones{
+    text-align: center;
+    line-height: 2;
+    
+}
+.secciones:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+.iconos{   
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--secundario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/*formulario de contacto*/
+.formulario{
+    background-color: var(--negro);
+    width: min(60rem, 100%);/*utiliza el valor mas chico*/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+.formulario fieldset{
+    border: none;
+}
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+@media (min-width: 769px) {
+    
+    .contenedor-campos{
+        display:grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+
+    }
+    .campo:nth-child(3),.campo:nth-child(4){
+        grid-column:1/3;
+    }
+}
+    
+.campo{
+    margin-bottom: 1rem;
+  
+}
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+.campo .boton{
+    width: 100%;
+    
+}
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+.campo textarea{
+    height: 16rem;
+}
+.parrafo{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 40px;
+}
+.parrafo-card{
+  background: var(--secundario);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+}
+.parrafo-card:hover{
+    background-color: var(--principal);
+    color: #212121;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+.Proyectos{
+    width: 100%;
+    height: 520px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 3px;
+}
+@media (max-width: 616px) {
+    .Proyectos{
+       overflow: hidden;
+       position: relative;
+       height: 500px;
+    }
+    .swiper{
+        height: 380px !important;
+    }
+    .swiper-pagination{
+        display: none !important;
+    }
+}
+.swiper {
+  width: 800px;
+  height: 500px;
+}
+.swiper-wrapper {
+    align-items: center;
+
+}
+.swiper-slide{
+    text-align: center;
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    position: relative;
+}
+.swiper-slide img{
+    display: block;
+    width: 100%;
+    align-items: center;
+    border-radius: 15px;
+  
+}
+.swiper-pagination{
+    --swiper-pagination-color: var(--principal);
+    --swiper-pagination-left: auto;
+    --swiper-pagination-right: auto;
+    --swiper-pagination-bottom: auto;
+    --swiper-pagination-top: 510px;
+    --swiper-pagination-fraction-color: inherit;
+    --swiper-pagination-progressbar-bg-color: #fffffffd;
+    --swiper-pagination-progressbar-size: 4px;
+    --swiper-pagination-bullet-size: 8px;
+    --swiper-pagination-bullet-width: 8px;
+    --swiper-pagination-bullet-height: 8px;
+    --swiper-pagination-bullet-inactive-color: var(--principal);
+    --swiper-pagination-bullet-inactive-opacity: 0.2;
+    --swiper-pagination-bullet-opacity: 1;
+    --swiper-pagination-bullet-horizontal-gap: 6px;
+    --swiper-pagination-bullet-vertical-gap: 6px;
+}
+.swiper-button-next, .swiper-button-prev{
+    --swiper-navigation-size: 44px;
+    --swiper-navigation-top-offset: 40%;
+    --swiper-navigation-sides-offset: 0px;
+    --swiper-navigation-color: var(--secundario);
+}
+@media (max-width: 769px) {
+    .swiper-button-next, .swiper-button-prev{
+        display: none !important;
+    }
+}
