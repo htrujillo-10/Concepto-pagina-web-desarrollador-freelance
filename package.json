@@ -1,6 +1,7 @@
 {
   "name": "freelancer_inicio",
   "type": "module",
+  "author": "Hernando Trujillo",
   "scripts": {
     "dev":"vite",
     "build": "vite build",
